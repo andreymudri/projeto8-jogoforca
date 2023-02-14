@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+#root {
+font-family: 'Roboto', sans-serif;
+}
+body { 
+    margin: auto;
+    background-color: darkgray;
+    max-width: 1025px;
+    height: 839px;
+}
+
+ img{
+    margin: 40px 60px;
+
+    max-width: 400px;
+    max-height: 466px;
+
+}
+.Topo {
+    display:flex;
+    justify-content: space-between;
+}
+.Topo button {
+    margin-top: 90px;
+    margin-right: 53px;
+}
+.letras{
+    display:flex;
+    justify-content: center;
+    
+}
+.letrasbtn {
+    display:flex;
+    justify-content: center;
+    gap: 6px;
+    display:flex;
+    flex-wrap:wrap;
+    max-width: 550px;
+}
+.chooseword button{
+    width: 200px;
+    height: 60px;
+    background: #27AE60;
+    border-radius: 8px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+.chooseword button:active{
+    transform: scale(0.8);
+}
+.letrasbtn button {
+    width: 40px;
+    height: 40px;
+    transition: all 0.2s ease-in-out;
+}
+.letrasbtn button:disabled {
+   background-color: #9FAAB5;
+   border: 1px solid #7AA7C7;
+   border-radius: 3px;
+   color: #798A9F;
+}
+.letrasbtn button:enabled {
+    background-color: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    color: #39739D;
+    cursor: pointer;
+}
+.letrasbtn button:active{
+    transform: scale(1.3);
+}
