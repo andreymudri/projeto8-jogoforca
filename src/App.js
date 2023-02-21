@@ -21,19 +21,23 @@ function App() {
     setImagem(imagens[0]);
   }
   function chooseLetter(letra) {
-
     if (Pause || ListaLetras.includes(letra)) return;
+
     setListaLetras(ListaLetras => [...ListaLetras, letra]);
-    checkGameWin();
-    checkGameOver();
+    setTimeout(checkGameWin(),100)
     if (!palavra.includes(letra)) {
-      setErros(Erros + 1)
-      setImagem(imagens[Erros])
+      let numErros = Erros + 1;
+      setErros(numErros)
+      setImagem(imagens[numErros])
+      checkGameOver(numErros);
     }
   }
-  function checkGameOver() {
-    if (Erros > 6) {
-      alert("Você perdeu!")
+  function checkGameOver(prop) {
+    if (6 === prop) {      
+      setImagem(imagens[6])
+      setTimeout(() => {alert("Você perdeu!")
+        
+      }, 10);
     setPause(true);
   }
   }
@@ -41,6 +45,7 @@ function App() {
     const letrasPalavra = palavra.split("");
     const letrasCertas = letrasPalavra.filter(letra => ListaLetras.includes(letra));
     if (letrasCertas.length === letrasPalavra.length) {
+      
       alert("Você venceu!")
       setPause(true);
     }

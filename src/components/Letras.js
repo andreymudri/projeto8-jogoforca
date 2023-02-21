@@ -8,7 +8,6 @@ export default function Letras(props) {
                     key={letra}
                     disabled={ListaLetras.includes(letra)}
                     onClick={() => props.chooseLetter(letra)} 
-                    palavra={props.palavra}
                 >
                     {letra.toUpperCase()}
             </button> )}

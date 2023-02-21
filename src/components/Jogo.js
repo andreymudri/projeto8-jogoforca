@@ -8,7 +8,7 @@ export default function Jogo(props) {
             <div className="chooseword">
                 <button data-test="choose-word" onClick={props.ChooseWord}>Escolher palavra</button>
 
-                <div className="palavra">{palavra.map((letra) => props.ListaLetras.indexOf(letra) !== -1  ? letra : "_" )}</div>
+                <div className="palavra" data-test="word">{palavra.map((letra) => props.ListaLetras.indexOf(letra) !== -1  ? letra : "_" )}</div>
             </div>
         </div>
 
