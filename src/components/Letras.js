@@ -1,19 +1,17 @@
 export default function Letras(props) {
-    
-    return (
-        <>
-            <div className="letrasbtn">
-                {props.alfabeto.map((letra, index) =>
-                    <button data-test="letter"
-                        key={letra}
-                        disabled={false}
-                        onClick={props.chooseLetter}    
-                    >
-                        {letra.toUpperCase()}
-                </button> )}
-        </div>
-        </>
+    let ListaLetras = props.ListaLetras
 
-)
-
+    return <>
+        <div className="letrasbtn">
+            {props.alfabeto.map((letra, index) =>
+                <button data-test="letter"
+                    key={letra}
+                    disabled={ListaLetras.includes(letra)}
+                    onClick={() => props.chooseLetter(letra)} 
+                    palavra={props.palavra}
+                >
+                    {letra.toUpperCase()}
+            </button> )}
+    </div>
+    </>;
 }
