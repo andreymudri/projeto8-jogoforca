@@ -70,6 +70,7 @@ function App() {
           alfabeto={alfabeto}
           chooseLetter={(letra) => chooseLetter(letra)}
           ListaLetras={ListaLetras}
+          Pause={Pause}
         />
       </div>
     </>
