@@ -12,6 +12,8 @@ function App() {
   let [palavra, setPalavra] = useState("")
   let [Pause, setPause] = useState(true)
   let [ListaLetras, setListaLetras] = useState([])
+  let [GameResult, setGameResult] = useState("");
+
 
   function ChooseWord() {
     setPause(false);
@@ -19,10 +21,10 @@ function App() {
     setListaLetras([]);
     setErros(0);
     setImagem(imagens[0]);
+    setGameResult("")
   }
   function chooseLetter(letra) {
     if (Pause || ListaLetras.includes(letra)) return;
-
     setListaLetras(ListaLetras => [...ListaLetras, letra]);
     setTimeout(checkGameWin(),100)
     if (!palavra.includes(letra)) {
@@ -32,22 +34,20 @@ function App() {
       checkGameOver(numErros);
     }
   }
-  function checkGameOver(prop) {
-    if (6 === prop) {      
+  function checkGameOver() {
+    if (Erros === 6) {
+      setPause(true);
       setImagem(imagens[6])
-      setTimeout(() => {alert("Você perdeu!")
-        
-      }, 10);
-    setPause(true);
+      setGameResult("lost");
+    }
   }
-  }
+  
   function checkGameWin() {
     const letrasPalavra = palavra.split("");
     const letrasCertas = letrasPalavra.filter(letra => ListaLetras.includes(letra));
     if (letrasCertas.length === letrasPalavra.length) {
-      
-      alert("Você venceu!")
       setPause(true);
+      setGameResult("won");
     }
   }
 
@@ -56,6 +56,7 @@ function App() {
     <>
       <div className="jogo">
         <Jogo
+          GameResult={GameResult}
           image={Imagem}
           palavra={palavra}
           ChooseWord={ChooseWord}

@@ -59,6 +59,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 .palavra {
     display: flex;
@@ -93,4 +94,8 @@ body {
 }
 .letrasbtn button:active{
     transform: scale(1.3);
+}
+
+.game-result{
+    margin-bottom: 15px;
 }
